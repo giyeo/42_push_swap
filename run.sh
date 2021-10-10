@@ -1,1 +1,0 @@
-gcc -o pushswap pushswap.c error.c utils.c init_stack.c itoa.c print_stacks.c atoi.c -fsanitize=address

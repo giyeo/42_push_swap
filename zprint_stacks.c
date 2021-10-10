@@ -3,9 +3,11 @@
 int		print_stack(s_node *stack)
 {
 	char *temp;
+	char s = ' ';
 
 	temp = ft_itoa(stack->value);
 	write(1, temp, ft_strlen(temp));
+	write(1, &s, 1);
 	free(temp);
 	return (1);
 }
@@ -35,6 +37,12 @@ void	print_stacks(s_node *stack_a, s_node *stack_b)
 		{
 			stack_a = stack_a->next;
 			printed = print_stack(stack_a);
+		}
+		else
+		{
+			char *s = "  ";
+			if(stack_b->next)
+				write(1, s, 2);
 		}
 		if(stack_b->next)
 		{
