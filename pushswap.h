@@ -6,6 +6,13 @@
 # include <stdio.h>
 # include <string.h>
 
+#define FIRST_NODE_A stack_a->next
+#define FIRST_NODE_B stack_b->next
+#define SECOND_NODE_A stack_a->next->next
+#define SECOND_NODE_B stack_a->next->next
+#define LAST_NODE_A last_a
+#define LAST_NODE_B last_b
+
 typedef struct node
 {
 	int value;
@@ -15,6 +22,7 @@ typedef struct node
 
 /*	Utils	*/
 int		ischardigit(char var);
+void	print_command(char *name);
 int		print_stack(s_node *stack);
 void	print_stacks(s_node *stack_a, s_node *stack_b);
 char	*ft_itoa(int n);

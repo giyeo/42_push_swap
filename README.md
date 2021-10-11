@@ -1,5 +1,6 @@
 TO DO:
 
-Sort using Commands;
+heap-use-after-free (work without sanitizer)
+./pushswap 1 2 3 5 4 0 ERROR!
 
-NO KNOW ERROS, need for testing;
+find better ways to sort

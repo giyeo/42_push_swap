@@ -28,6 +28,7 @@ void	rra(s_node *stack)
 	stack->next = last;
 	last->previous = stack;
 	last->next->previous = last;
+	print_command("rra");
 }
 
 void	rrb(s_node *stack)
@@ -56,6 +57,7 @@ void	rrb(s_node *stack)
 	stack->next = last;
 	last->previous = stack;
 	last->next->previous = last;
+	print_command("rrb");
 }
 
 void	rrr(s_node *stack_a, s_node *stack_b)

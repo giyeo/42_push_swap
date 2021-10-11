@@ -21,6 +21,7 @@ void	print_stack_foot()
 	names = "a b\n";
 	write(1, sep, 4);
 	write(1, names, 4);
+	write(1, sep, 4);
 }
 
 void	print_stacks(s_node *stack_a, s_node *stack_b)
@@ -53,4 +54,11 @@ void	print_stacks(s_node *stack_a, s_node *stack_b)
 			write(1, &temp, 1);
 	}
 	print_stack_foot();
+}
+
+void	print_command(char *name)
+{
+	char new_line = '\n';
+	write(1, name, ft_strlen(name));
+	write(1, &new_line, 1);
 }
