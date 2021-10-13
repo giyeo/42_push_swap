@@ -23,7 +23,7 @@ typedef struct node
 
 /*	Utils	*/
 int		ischardigit(char var);
-void	print_command(char *name);
+int		print_command(char *name);
 int		print_stack(s_node *stack);
 void	print_stacks(s_node *stack_a, s_node *stack_b);
 char	*ft_itoa(int n);

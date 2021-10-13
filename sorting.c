@@ -90,6 +90,14 @@ int	ordered(s_node *stack_a)
 void	in_order(s_node *stack_a, s_node *stack_b)
 {
 	print_stacks(stack_a, stack_b);
+
+	char *str = ft_itoa(print_command("count"));
+	FILE *fp;
+	fp = fopen("/home/rafael/Desktop/push_swap/output.txt","a");
+	fputs(str, fp);
+	fputc('\n', fp);
+	free(str);
+	fclose(fp);
 	exit(0);
 }
 void	remove_lower(s_node *stack_a, s_node *stack_b, int len)
