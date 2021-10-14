@@ -1,14 +1,25 @@
-import os
 from itertools import permutations
-three = permutations([1, 2, 3], 3)
-four = permutations([1, 2, 3, 4], 4)
-five = permutations([1, 2, 3, 4, 5], 5)
+import random
+import os
 
-for each in three:
-	os.system("./pushswap " + str(each[0]) + " " + str(each[1]) + " " + str(each[2]))
+def do_test_with(number, times, mode):
+	for one in range(times):
+		if(mode == 1):
+			hundred = permutations(range(number), number)
+			for each in hundred:
+				string = "./pushswap "
+				for one in each:
+					string+=str(one) + " "
+				os.system(string)
+		else:
+			hundred = random.sample(range(number), number)
+			string = "./pushswap "
+			for each in hundred:
+				string+=str(each) + " "
+			os.system(string)
 
-for each in four:
-	os.system("./pushswap " + str(each[0]) + " " + str(each[1]) + " " + str(each[2]) + " " + str(each[3]))
-
-for each in five:
-	os.system("./pushswap " + str(each[0]) + " " + str(each[1]) + " " + str(each[2]) + " " + str(each[3]) + " " + str(each[4]))
+#	1 for permutations, 0 to random numbers
+do_test_with(3, 1, 1)
+do_test_with(5, 1, 1)
+do_test_with(100, 1, 0)
+do_test_with(500, 1, 0)

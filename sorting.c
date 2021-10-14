@@ -149,7 +149,7 @@ void sort(s_node *stack_a, s_node *stack_b)
 			sa(stack_a);
 	if(len == 3)
 		sort_with_3(stack_a);
-	else if (len <= 5)
+	else if (len <= 500)
 		sort_with_5(stack_a, stack_b);
 	print_stacks(stack_a, stack_b);
 }
