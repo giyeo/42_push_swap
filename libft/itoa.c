@@ -1,4 +1,4 @@
-#include "pushswap.h"
+#include "../pushswap.h"
 
 static int	power(long int n, int p)
 {

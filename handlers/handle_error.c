@@ -1,4 +1,4 @@
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void error()
 {
@@ -60,7 +60,7 @@ void	isnumber_handler(int argc, char *argv[])
 	}
 }
 
-void	isfewarg_handler(int argc, char *argv[])
+void	isfewarg_handler(int argc)
 {
 	if (argc == 1)
 			error();

@@ -1,4 +1,4 @@
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void sa(s_node *stack)
 {

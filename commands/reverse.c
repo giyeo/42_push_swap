@@ -1,4 +1,4 @@
-#include "pushswap.h"
+#include "../pushswap.h"
 
 /*The last becomes the first!*/
 
@@ -6,7 +6,6 @@ void	rra(s_node *stack)
 {
 	s_node *start = stack;
 	s_node *last;
-	s_node *temp;
 	int counter = 0;
 
 	if(more_than_one(stack))
@@ -35,7 +34,6 @@ void	rrb(s_node *stack)
 {
 	s_node *start = stack;
 	s_node *last;
-	s_node *temp;
 	int counter = 0;
 
 	if(more_than_one(stack))

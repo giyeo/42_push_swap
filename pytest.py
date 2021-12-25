@@ -21,5 +21,3 @@ def do_test_with(number, times, mode):
 #	1 for permutations, 0 to random numbers
 do_test_with(3, 1, 1)
 do_test_with(5, 1, 1)
-do_test_with(100, 1, 0)
-do_test_with(500, 1, 0)

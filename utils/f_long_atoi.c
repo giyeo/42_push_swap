@@ -1,4 +1,4 @@
-#include "pushswap.h"
+#include "../pushswap.h"
 
 long long int	ft_isdigit(long long int argument)
 {

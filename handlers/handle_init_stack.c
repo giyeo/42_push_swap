@@ -1,4 +1,4 @@
-#include "pushswap.h"
+#include "../pushswap.h"
 
 s_node *init_stack()
 {
@@ -25,6 +25,32 @@ void populate(s_node *stack, int size, char *argv[])
 	}
 	stack->value = atoi(argv[i + 1]);
 	stack->next = NULL;
+}
+#include <stdio.h>
+
+void	delete_from_array(int *array)
+{
+	int i;
+
+	i = 0;
+	while(array[i++]);
+}
+
+void	index_it(s_node *stack, char *argv[])
+{
+	int n = 1;
+	int i = 1;
+	int *array;
+	while(argv[n])
+	 	argv[n++];
+	array = (int *)malloc(sizeof(int) * (n - 1));
+	while(n--)
+	{
+		printf("[%d]", i);
+		printf("{%d}\n", ft_atoi(argv[i]));
+		array[i-1] = ft_atoi(argv[i++]);
+	}
+	free(array);
 }
 
 void	free_stack(s_node *stack)

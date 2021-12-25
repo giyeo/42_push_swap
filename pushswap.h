@@ -17,6 +17,7 @@
 typedef struct node
 {
 	int value;
+	int index;
 	struct node *next;
 	struct node *previous;
 }	s_node;
@@ -27,6 +28,7 @@ int		print_command(char *name);
 int		print_stack(s_node *stack);
 void	print_stacks(s_node *stack_a, s_node *stack_b);
 char	*ft_itoa(int n);
+int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *pointer);
 int		ft_strcmp(char *str1, char *str2);
 long long int	ft_atoi_long(const char *str);
@@ -36,7 +38,7 @@ void	isbigger_handler(int argc, char *argv[]);
 void	isduplic_handler(int argc, char *argv[]);
 void	isnumber_handler(int argc, char *argv[]);
 void	errors_handler(int argc, char *argv[]);
-void	isfewarg_handler(int argc, char *argv[]);
+void	isfewarg_handler(int argc);
 /*	INIT Stack	*/
 s_node	*init_stack();
 void	populate(s_node *stack, int size, char *argv[]);
@@ -57,4 +59,7 @@ void	rrb(s_node *stack);
 void	rrr(s_node *stack_a, s_node *stack_b);
 /*	Sorting		*/
 void	sort(s_node *stack_a, s_node *stack_b);
+int		find_lower(s_node *stack_a);
+void	index_it(s_node *stack, char *argv[]);
+int		stack_length(s_node *stack);
 #endif

@@ -65,7 +65,7 @@ int	print_command(char *name)
 	if (ft_strcmp(name, "result"))
 	{
 		FILE *fp;
-		fp = fopen("/home/rafael/Desktop/push_swap/output.txt","a");
+		fp = fopen("./output.txt","a");
 		name = ft_itoa(count);
 		write(1, name, ft_strlen(name));
 		fputs(name, fp);

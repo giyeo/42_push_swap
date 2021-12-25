@@ -13,13 +13,6 @@ int	stack_length(s_node *stack)
 	return (counter);
 }
 
-s_node	*last_node(s_node *stack)
-{
-	while(stack->next)
-		stack = stack->next;
-	return (stack);
-}
-
 void	sort_with_3(s_node *stack_a)
 {
 	if(FIRST_NODE_A->value > SECOND_NODE_A->value)
@@ -93,13 +86,14 @@ void	in_order(s_node *stack_a, s_node *stack_b)
 
 	char *str = ft_itoa(print_command("count"));
 	FILE *fp;
-	fp = fopen("/home/rafael/Desktop/push_swap/output.txt","a");
+	fp = fopen("./output.txt","a");
 	fputs(str, fp);
 	fputc('\n', fp);
 	free(str);
 	fclose(fp);
 	exit(0);
 }
+
 void	remove_lower(s_node *stack_a, s_node *stack_b, int len)
 {
 	int i = 0;
@@ -129,11 +123,14 @@ void	sort_with_5(s_node *stack_a, s_node *stack_b)
 		pb(stack_a, stack_b);
 }
 
+void	sort_snake(s_node *stack_a, s_node *stack_b)
+{
+	//bring_up_by_index
+}
+
 void sort(s_node *stack_a, s_node *stack_b)
 {
 	int len = stack_length(stack_a);
-	int run = 1;
-	s_node *last_a = last_node(stack_a);
 
 	print_stacks(stack_a, stack_b);
 
@@ -149,7 +146,9 @@ void sort(s_node *stack_a, s_node *stack_b)
 			sa(stack_a);
 	if(len == 3)
 		sort_with_3(stack_a);
-	else if (len <= 500)
+	else if (len <= 5)
 		sort_with_5(stack_a, stack_b);
+	else
+		sort_snake(stack_a, stack_b);
 	print_stacks(stack_a, stack_b);
 }

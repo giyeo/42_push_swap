@@ -1,4 +1,4 @@
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void	pa(s_node *stack_a, s_node *stack_b)
 {
