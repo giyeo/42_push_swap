@@ -1,6 +1,1 @@
-TO DO:
-
-heap-use-after-free (work without sanitizer)
-./pushswap 1 2 3 5 4 0 ERROR!
-
-find better ways to sort
+What if we index it before populate, and use the index value to sort it?
