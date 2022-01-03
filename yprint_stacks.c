@@ -5,7 +5,7 @@ int		print_stack(s_node *stack)
 	char *temp;
 	char s = ' ';
 
-	temp = ft_itoa(stack->value);
+	temp = ft_itoa(stack->index);
 	write(1, temp, ft_strlen(temp));
 	write(1, &s, 1);
 	free(temp);

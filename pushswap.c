@@ -32,8 +32,7 @@ int	main(int argc, char *argv[])
 	test(argc, argv);
 	stack_a = init_stack();
 	stack_b = init_stack();
-	//index_it(stack_a, argv);
-	populate(stack_a, argc, argv);
+	populate(stack_a, argc, argv, index_it(argc, argv));
 	sort(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);

@@ -123,9 +123,24 @@ void	sort_with_5(s_node *stack_a, s_node *stack_b)
 		pb(stack_a, stack_b);
 }
 
-void	sort_snake(s_node *stack_a, s_node *stack_b)
+void	sort_snake(s_node *stack_a, s_node *stack_b, int len)
 {
-	//bring_up_by_index
+	int i = -1;
+	int n = 0;
+
+	while(stack_length(stack_a) != 0)
+	{
+		i = -1;
+		n += 2;
+		len = stack_length(stack_a);
+		while(++i < len)
+		{
+			if (FIRST_NODE_A->index < n)
+				pb(stack_a, stack_b);
+			else
+				ra(stack_a);
+		}
+	}
 }
 
 void sort(s_node *stack_a, s_node *stack_b)
@@ -149,6 +164,6 @@ void sort(s_node *stack_a, s_node *stack_b)
 	else if (len <= 5)
 		sort_with_5(stack_a, stack_b);
 	else
-		sort_snake(stack_a, stack_b);
+		sort_snake(stack_a, stack_b, len);
 	print_stacks(stack_a, stack_b);
 }

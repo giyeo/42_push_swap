@@ -3,7 +3,7 @@ SRC :=	./commands/push.c ./commands/reverse.c ./commands/rotate.c ./commands/swa
 		./handlers/handle_error.c ./handlers/handle_init_stack.c \
 		./libft/atoi.c ./libft/itoa.c \
 		./utils/utils.c ./utils/utils_llists.c ./utils/f_long_atoi.c \
-		pushswap.c sorting.c yprint_stacks.c
+		pushswap.c sorting.c yprint_stacks.c indexator.c
 
 OBJS := $(SRC:.c=.o)
 

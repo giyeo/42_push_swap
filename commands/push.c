@@ -1,6 +1,6 @@
 #include "../pushswap.h"
 
-void	pa(s_node *stack_a, s_node *stack_b)
+void	pb(s_node *stack_a, s_node *stack_b)
 {
 	if(more_than_one(stack_a))
 		return ;
@@ -12,12 +12,14 @@ void	pa(s_node *stack_a, s_node *stack_b)
 	{
 		stack_b->next = node;
 		stack_b->next->value = stack_a->next->value;
+		stack_b->next->index = stack_a->next->index;
 		stack_b->next->previous = stack_b;
 		stack_b->next->next = NULL;
 	}
 	else
 	{
 		node->value = stack_a->next->value;
+		node->index = stack_a->next->index;
 		node->next = stack_b->next;
 		stack_b->next = node;
 		node->previous = stack_b;
@@ -34,7 +36,7 @@ void	pa(s_node *stack_a, s_node *stack_b)
 	free(to_free);
 }
 
-void	pb(s_node *stack_a, s_node *stack_b)
+void	pa(s_node *stack_a, s_node *stack_b)
 {
 	if(more_than_one(stack_b))
 		return ;
@@ -46,12 +48,14 @@ void	pb(s_node *stack_a, s_node *stack_b)
 	{
 		stack_a->next = node;
 		stack_a->next->value = stack_b->next->value;
+		stack_a->next->index = stack_b->next->index;
 		stack_a->next->previous = stack_a;
 		stack_a->next->next = NULL;
 	}
 	else
 	{
 		node->value = stack_b->next->value;
+		node->index = stack_b->next->index;
 		node->next = stack_a->next;
 		stack_a->next = node;
 		node->previous = stack_a;

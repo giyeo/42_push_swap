@@ -8,7 +8,7 @@ s_node *init_stack()
 	return (stack);
 }
 
-void populate(s_node *stack, int size, char *argv[])
+void populate(s_node *stack, int size, char *argv[], int *indexator)
 {
 	int i = 0;
 
@@ -20,11 +20,15 @@ void populate(s_node *stack, int size, char *argv[])
 	{
 		stack->next = (s_node*)malloc(sizeof(s_node));
 		stack->next->previous = stack;
-		stack->value = atoi(argv[i++ + 1]);
+		stack->value = atoi(argv[i + 1]);
+		stack->index = indexator[i];
 		stack = stack->next;
+		i++;
 	}
 	stack->value = atoi(argv[i + 1]);
+	stack->index = indexator[i];
 	stack->next = NULL;
+	free(indexator);
 }
 #include <stdio.h>
 
@@ -34,23 +38,6 @@ void	delete_from_array(int *array)
 
 	i = 0;
 	while(array[i++]);
-}
-
-void	index_it(s_node *stack, char *argv[])
-{
-	int n = 1;
-	int i = 1;
-	int *array;
-	while(argv[n])
-	 	argv[n++];
-	array = (int *)malloc(sizeof(int) * (n - 1));
-	while(n--)
-	{
-		printf("[%d]", i);
-		printf("{%d}\n", ft_atoi(argv[i]));
-		array[i-1] = ft_atoi(argv[i++]);
-	}
-	free(array);
 }
 
 void	free_stack(s_node *stack)

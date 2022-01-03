@@ -41,7 +41,7 @@ void	errors_handler(int argc, char *argv[]);
 void	isfewarg_handler(int argc);
 /*	INIT Stack	*/
 s_node	*init_stack();
-void	populate(s_node *stack, int size, char *argv[]);
+void	populate(s_node *stack, int size, char *argv[], int *indexator);
 void	free_stack(s_node *stack);
 /*	LLists Utils	*/
 int		more_than_one(s_node *stack);
@@ -60,6 +60,6 @@ void	rrr(s_node *stack_a, s_node *stack_b);
 /*	Sorting		*/
 void	sort(s_node *stack_a, s_node *stack_b);
 int		find_lower(s_node *stack_a);
-void	index_it(s_node *stack, char *argv[]);
+int		*index_it(int argc, char *argv[]);
 int		stack_length(s_node *stack);
 #endif
