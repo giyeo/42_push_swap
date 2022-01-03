@@ -32,7 +32,7 @@ void	pb(s_node *stack_a, s_node *stack_b)
 		stack_a->next = stack_a->next->next;
 		stack_a->next->previous = stack_a;
 	}
-	print_command("pa");
+	print_command("pb");
 	free(to_free);
 }
 
@@ -68,6 +68,6 @@ void	pa(s_node *stack_a, s_node *stack_b)
 		stack_b->next = stack_b->next->next;
 		stack_b->next->previous = stack_b;
 	}
-	print_command("pb");
+	print_command("pa");
 	free(to_free);
 }

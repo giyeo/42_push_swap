@@ -19,5 +19,4 @@ def do_test_with(number, times, mode):
 			os.system(string)
 
 #	1 for permutations, 0 to random numbers
-do_test_with(3, 1, 1)
-do_test_with(5, 1, 1)
+do_test_with(100, 50, 0)

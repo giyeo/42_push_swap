@@ -10,6 +10,10 @@ void sa(s_node *stack)
 			value1 = stack->next->value;
 			stack->next->value = stack->next->next->value;
 			stack->next->next->value = value1;
+
+			value1 = stack->next->index;
+			stack->next->index = stack->next->next->index;
+			stack->next->next->index = value1;
 			print_command("sa");
 		}
 
@@ -25,6 +29,10 @@ void sb(s_node *stack)
 			value1 = stack->next->value;
 			stack->next->value = stack->next->next->value;
 			stack->next->next->value = value1;
+
+			value1 = stack->next->index;
+			stack->next->index = stack->next->next->index;
+			stack->next->next->index = value1;
 			print_command("sb");
 		}
 }

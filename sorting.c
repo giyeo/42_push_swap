@@ -108,7 +108,7 @@ void	remove_lower(s_node *stack_a, s_node *stack_b, int len)
 			ra(stack_a);
 	if(ordered(stack_a))
 		in_order(stack_a, stack_b);
-	pa(stack_a, stack_b);
+	pb(stack_a, stack_b);
 }
 
 void	sort_with_5(s_node *stack_a, s_node *stack_b)
@@ -120,26 +120,82 @@ void	sort_with_5(s_node *stack_a, s_node *stack_b)
 	if(!ordered(stack_a))
 		sort_with_3(stack_a);
 	while(len2-- > 3)
-		pb(stack_a, stack_b);
+		pa(stack_a, stack_b);
+}
+
+
+
+
+
+
+
+
+
+int	find_next_position(s_node *stack_b)
+{
+	int max_index, max_position;
+	int counter = 1;
+
+	stack_b = stack_b->next;
+	max_index = stack_b->index;
+	
+	while(stack_b->next)
+	{
+		if(stack_b->index >= max_index)
+		{
+			max_position = counter;
+			max_index = stack_b->index;
+		}
+		stack_b = stack_b->next;
+		counter++;
+	}
+	if(stack_b->index >= max_index)
+	{
+		max_position = counter;
+		max_index = stack_b->index;
+	}
+	return (max_position);
 }
 
 void	sort_snake(s_node *stack_a, s_node *stack_b, int len)
 {
 	int i = -1;
 	int n = 0;
-
-	while(stack_length(stack_a) != 0)
+	int t_length = len;
+	while(stack_length(stack_a) > 5)
 	{
 		i = -1;
-		n += 2;
+		n += 15;
 		len = stack_length(stack_a);
+		int counter = 0;
 		while(++i < len)
 		{
+			if(counter == 15)
+				break;
 			if (FIRST_NODE_A->index < n)
-				pb(stack_a, stack_b);
+			{
+				// if (FIRST_NODE_A->index >= t_length - 5)
+				// 	ra(stack_a);
+				// else
+					counter++;
+					pb(stack_a, stack_b);
+			}
 			else
 				ra(stack_a);
 		}
+	}
+	//sort_with_5(stack_a, stack_b);
+	while(stack_length(stack_b) != 0)
+	{
+		int len_b = stack_length(stack_b);
+		int position = find_next_position(stack_b);
+		if(position >= len_b / 2 + 1)
+			while(stack_b->next->index != len_b - 1)
+				rrb(stack_b);
+		else
+			while(stack_b->next->index != len_b - 1)
+				rb(stack_b);
+		pa(stack_a, stack_b);
 	}
 }
 

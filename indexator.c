@@ -16,7 +16,6 @@ int *index_it(int argc, char *argv[])
     int minor;
     int major;
     int *return_it;
-	int ops = 0;
     s_index *array;
 
     array = (s_index *)malloc(sizeof(s_index) * (argc - 1));
@@ -38,7 +37,6 @@ int *index_it(int argc, char *argv[])
             {
                 minor = array[i].value;
                 array[i].index = j;
-				ops++;
             }
         j++;
         major = minor;
