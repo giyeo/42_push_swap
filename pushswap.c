@@ -36,5 +36,4 @@ int	main(int argc, char *argv[])
 	sort(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
-	print_command("result");
 }

@@ -82,7 +82,6 @@ int	ordered(s_node *stack_a)
 
 void	in_order(s_node *stack_a, s_node *stack_b)
 {
-	print_stacks(stack_a, stack_b);
 
 	char *str = ft_itoa(print_command("count"));
 	FILE *fp;
@@ -162,40 +161,55 @@ void	sort_snake(s_node *stack_a, s_node *stack_b, int len)
 	int i = -1;
 	int n = 0;
 	int t_length = len;
-	while(stack_length(stack_a) > 5)
+	while(stack_length(stack_a) > 0)
 	{
 		i = -1;
-		n += 15;
+		n += 20;
 		len = stack_length(stack_a);
 		int counter = 0;
 		while(++i < len)
 		{
-			if(counter == 15)
+			if(counter == 21)
 				break;
 			if (FIRST_NODE_A->index < n)
 			{
-				// if (FIRST_NODE_A->index >= t_length - 5)
-				// 	ra(stack_a);
-				// else
-					counter++;
-					pb(stack_a, stack_b);
+				counter++;
+				pb(stack_a, stack_b);
 			}
 			else
 				ra(stack_a);
 		}
 	}
-	//sort_with_5(stack_a, stack_b);
 	while(stack_length(stack_b) != 0)
 	{
 		int len_b = stack_length(stack_b);
 		int position = find_next_position(stack_b);
+		int swap_signal = 0;
 		if(position >= len_b / 2 + 1)
 			while(stack_b->next->index != len_b - 1)
-				rrb(stack_b);
+			{
+				if(stack_b->next->index == len_b - 2)
+				{
+					pa(stack_a, stack_b);
+					swap_signal = 1;
+				}
+				else
+					rrb(stack_b);
+			}
 		else
 			while(stack_b->next->index != len_b - 1)
-				rb(stack_b);
+			{
+				if(stack_b->next->index == len_b - 2)
+				{
+					pa(stack_a, stack_b);
+					swap_signal = 1;
+				}
+				else
+					rb(stack_b);
+			}
 		pa(stack_a, stack_b);
+		if(swap_signal)
+			sa(stack_a);
 	}
 }
 
@@ -203,13 +217,10 @@ void sort(s_node *stack_a, s_node *stack_b)
 {
 	int len = stack_length(stack_a);
 
-	print_stacks(stack_a, stack_b);
-
 	if(more_than_one(stack_a))
 		return ;
 	if(ordered(stack_a))
 	{
-		print_stacks(stack_a, stack_b);
 		return ;
 	}
 	if(len == 2)
@@ -221,5 +232,4 @@ void sort(s_node *stack_a, s_node *stack_b)
 		sort_with_5(stack_a, stack_b);
 	else
 		sort_snake(stack_a, stack_b, len);
-	print_stacks(stack_a, stack_b);
 }

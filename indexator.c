@@ -47,10 +47,5 @@ int *index_it(int argc, char *argv[])
         return_it[i] = array[i].index;
     free(array);
 
-	int l = 0;
-	while(l < argc - 1)
-		printf("[%d]", return_it[l++]);
-	printf("\n");
-
     return return_it;
 }
