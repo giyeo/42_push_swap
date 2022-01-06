@@ -80,7 +80,7 @@ int	ordered(s_node *stack_a)
 	return 1;
 }
 
-void	in_order(s_node *stack_a, s_node *stack_b)
+void	in_order()
 {
 
 	char *str = ft_itoa(print_command("count"));
@@ -106,7 +106,7 @@ void	remove_lower(s_node *stack_a, s_node *stack_b, int len)
 		while(i++ < lower_number_position - 1)
 			ra(stack_a);
 	if(ordered(stack_a))
-		in_order(stack_a, stack_b);
+		in_order();
 	pb(stack_a, stack_b);
 }
 
@@ -156,35 +156,56 @@ int	find_next_position(s_node *stack_b)
 	return (max_position);
 }
 
-void	sort_snake(s_node *stack_a, s_node *stack_b, int len)
+void	sort_with_n(s_node *stack_a, s_node *stack_b, int len)
 {
-	int i = -1;
-	int n = 0;
-	int t_length = len;
+	//divide in n chunks until len of stack_a equal 0
+	int counter = 0;
 	while(stack_length(stack_a) > 0)
 	{
-		i = -1;
-		n += 20;
-		len = stack_length(stack_a);
-		int counter = 0;
-		while(++i < len)
+		while(counter < 40)
 		{
-			if(counter == 21)
-				break;
-			if (FIRST_NODE_A->index < n)
+			if (FIRST_NODE_A->index >= 40 && FIRST_NODE_A->index < 60)
 			{
 				counter++;
 				pb(stack_a, stack_b);
 			}
+			else if (FIRST_NODE_A->index >= 20 && FIRST_NODE_A->index < 40)
+			{
+				counter++;
+				pb(stack_a, stack_b);
+				if(stack_length(stack_b) > 1)
+					rb(stack_b);
+			}
 			else
 				ra(stack_a);
 		}
+		while(counter < 80)
+		{
+			if (FIRST_NODE_A->index >= 60 && FIRST_NODE_A->index < 80)
+			{
+				counter++;
+				pb(stack_a, stack_b);
+			}
+			else if (FIRST_NODE_A->index >= 0 && FIRST_NODE_A->index < 20)
+			{
+				counter++;
+				pb(stack_a, stack_b);
+				if(stack_length(stack_b) > 1)
+					rb(stack_b);
+			}
+			else
+				ra(stack_a);
+		}
+		while(stack_length(stack_a) > 0)
+			pb(stack_a, stack_b);
 	}
+	//bring back numbers in order
 	while(stack_length(stack_b) != 0)
 	{
 		int len_b = stack_length(stack_b);
 		int position = find_next_position(stack_b);
 		int swap_signal = 0;
+		//after half rrb
 		if(position >= len_b / 2 + 1)
 			while(stack_b->next->index != len_b - 1)
 			{
@@ -196,6 +217,7 @@ void	sort_snake(s_node *stack_a, s_node *stack_b, int len)
 				else
 					rrb(stack_b);
 			}
+		//before half rb
 		else
 			while(stack_b->next->index != len_b - 1)
 			{
@@ -207,6 +229,7 @@ void	sort_snake(s_node *stack_a, s_node *stack_b, int len)
 				else
 					rb(stack_b);
 			}
+		//put in a, swap if necessary
 		pa(stack_a, stack_b);
 		if(swap_signal)
 			sa(stack_a);
@@ -220,9 +243,7 @@ void sort(s_node *stack_a, s_node *stack_b)
 	if(more_than_one(stack_a))
 		return ;
 	if(ordered(stack_a))
-	{
 		return ;
-	}
 	if(len == 2)
 		if (FIRST_NODE_A->value > SECOND_NODE_A->value)
 			sa(stack_a);
@@ -231,5 +252,7 @@ void sort(s_node *stack_a, s_node *stack_b)
 	else if (len <= 5)
 		sort_with_5(stack_a, stack_b);
 	else
-		sort_snake(stack_a, stack_b, len);
+		sort_with_n(stack_a, stack_b, len);
+	//print_stacks(stack_a, stack_b);
 }
+	
