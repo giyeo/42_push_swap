@@ -9,8 +9,7 @@
 #define SECOND_NODE_A stack_a->next->next
 #define SECOND_NODE_B stack_b->next->next
 #define THIRD_NODE_A stack_a->next->next->next
-#define LAST_NODE_A last_a
-#define LAST_NODE_B last_b
+
 
 typedef struct node
 {
