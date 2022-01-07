@@ -190,8 +190,7 @@ void	sort_with_n(s_node *stack_a, s_node *stack_b, int len)
 			{
 				counter++;
 				pb(stack_a, stack_b);
-				if(stack_length(stack_b) > 1)
-					rb(stack_b);
+				rb(stack_b);
 			}
 			else
 				ra(stack_a);

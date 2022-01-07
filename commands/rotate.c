@@ -45,7 +45,7 @@ void	rb(s_node *stack)
 	stack = start;
 	if (counter == 2)
 	{
-		sa(stack);
+		sb(stack);
 		return ;
 	}
 	last->next = stack->next; 
