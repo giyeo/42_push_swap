@@ -30,15 +30,6 @@ void populate(s_node *stack, int size, char *argv[], int *indexator)
 	stack->next = NULL;
 	free(indexator);
 }
-#include <stdio.h>
-
-void	delete_from_array(int *array)
-{
-	int i;
-
-	i = 0;
-	while(array[i++]);
-}
 
 void	free_stack(s_node *stack)
 {

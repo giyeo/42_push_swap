@@ -1,8 +1,4 @@
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
-
+# include "pushswap.h"
 typedef struct index
 {
     int value;

@@ -3,8 +3,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
 
 #define FIRST_NODE_A stack_a->next
 #define FIRST_NODE_B stack_b->next

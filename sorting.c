@@ -80,19 +80,6 @@ int	ordered(s_node *stack_a)
 	return 1;
 }
 
-void	in_order()
-{
-
-	char *str = ft_itoa(print_command("count"));
-	FILE *fp;
-	fp = fopen("./output.txt","a");
-	fputs(str, fp);
-	fputc('\n', fp);
-	free(str);
-	fclose(fp);
-	exit(0);
-}
-
 void	remove_lower(s_node *stack_a, s_node *stack_b, int len)
 {
 	int i = 0;
@@ -106,7 +93,7 @@ void	remove_lower(s_node *stack_a, s_node *stack_b, int len)
 		while(i++ < lower_number_position - 1)
 			ra(stack_a);
 	if(ordered(stack_a))
-		in_order();
+		exit(0);
 	pb(stack_a, stack_b);
 }
 

@@ -19,15 +19,18 @@ size_t	ft_strlen(const char *pointer)
 
 int ft_strcmp(char *str1, char *str2)
 {
-	int size;
-	int i;
+	size_t size;
+	size_t i;
 
 	i = 0;
 	size = ft_strlen(str1);
 	if(size != ft_strlen(str2))
 		return (0);
 	while(i < size)
-		if(str1[i] != str2[i++])
+	{
+		if(str1[i] != str2[i])
 			return (0);
+		i++;
+	}
 	return (1);
 }

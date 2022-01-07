@@ -53,7 +53,7 @@ void	isnumber_handler(int argc, char *argv[])
 	{
 		j = 0;
 		string = argv[i++ + 1];
-		lenght = strlen(string);
+		lenght = ft_strlen(string);
 		while(j < lenght)
 			if (!ischardigit(string[j++]))
 				error();

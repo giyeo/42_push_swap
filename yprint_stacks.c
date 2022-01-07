@@ -60,21 +60,7 @@ int	print_command(char *name)
 {
 	static int count = 0;
 	char new_line = '\n';
-	if (ft_strcmp(name, "count"))
-		return count;
-	if (ft_strcmp(name, "result"))
-	{
-		FILE *fp;
-		fp = fopen("./output.txt","a");
-		name = ft_itoa(count);
-		write(1, name, ft_strlen(name));
-		fputs(name, fp);
-		fputc('\n', fp);
-		fclose(fp);
-		free(name);
-	}
-	else
-		write(1, name, ft_strlen(name));
+	write(1, name, ft_strlen(name));
 	write(1, &new_line, 1);
 	count++;
 	return 0;
