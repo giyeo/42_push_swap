@@ -171,9 +171,7 @@ void	sort_with_n(s_node *stack_a, s_node *stack_b, int len)
                 rb(stack_b);
         }
         else
-		{
             ra(stack_a);
-		}
         if (counter == chunk * 2)
         {
             last_up = up;

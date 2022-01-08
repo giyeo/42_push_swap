@@ -1,4 +1,4 @@
-NAME := pushswap
+NAME := push_swap
 SRC :=	./commands/push.c ./commands/reverse.c ./commands/rotate.c ./commands/swap.c \
 		./handlers/handle_error.c ./handlers/handle_init_stack.c \
 		./libft/atoi.c ./libft/itoa.c \
