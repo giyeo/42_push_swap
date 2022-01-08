@@ -146,7 +146,9 @@ int	find_next_position(s_node *stack_b)
 void	sort_with_n(s_node *stack_a, s_node *stack_b, int len)
 {
 	//divide in n chunks until len of stack_a equal 0
-	int chunk = 30;
+	int chunk = 14;
+	if (len > 450)
+		chunk = 29;
     int up = (len / 2) + chunk;
     int down = (len / 2) - chunk;
 
