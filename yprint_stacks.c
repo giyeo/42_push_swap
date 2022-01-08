@@ -59,9 +59,51 @@ void	print_stacks(s_node *stack_a, s_node *stack_b)
 int	print_command(char *name)
 {
 	static int count = 0;
+	static int checkA = 0;
+	static int checkB = 0;
 	char new_line = '\n';
-	write(1, name, ft_strlen(name));
-	write(1, &new_line, 1);
+	if(ft_strcmp(name, "ra"))
+	{
+		if(checkA)
+		{
+			write(1, name, ft_strlen(name));
+			write(1, &new_line, 1);
+		}
+		checkA = 1;
+	}
+	else if (ft_strcmp(name, "rb"))
+	{
+		if(checkB)
+		{
+			write(1, name, ft_strlen(name));
+			write(1, &new_line, 1);
+		}
+		checkB = 1;
+	}
+	else
+	{
+		if(checkA)
+		{
+			write(1, "ra", 2);
+			write(1, &new_line, 1);
+		}
+		if(checkB)
+		{
+			write(1, "rb", 2);
+			write(1, &new_line, 1);
+		}
+		checkA = 0;
+		checkB = 0;
+		write(1, name, ft_strlen(name));
+		write(1, &new_line, 1);
+	}
+	if(checkA && checkB)
+	{
+		checkA = 0;
+		checkB = 0;
+		write(1, "rr", 2);
+		write(1, &new_line, 1);
+	}
 	count++;
 	return 0;
 }

@@ -237,6 +237,5 @@ void sort(s_node *stack_a, s_node *stack_b)
 		sort_with_5(stack_a, stack_b);
 	else
 		sort_with_n(stack_a, stack_b, len);
-	//print_stacks(stack_a, stack_b);
 }
 	
