@@ -236,4 +236,3 @@ void sort(s_node *stack_a, s_node *stack_b)
 	else
 		sort_with_n(stack_a, stack_b, len);
 }
-	

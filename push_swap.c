@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/09 15:28:11 by rpaulino          #+#    #+#             */
+/*   Updated: 2022/01/09 15:28:24 by rpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
 void	errors_handler(int argc, char *argv[])
@@ -10,8 +22,8 @@ void	errors_handler(int argc, char *argv[])
 
 int	main(int argc, char *argv[])
 {
-	s_node *stack_a;
-	s_node *stack_b;
+	s_node	*stack_a;
+	s_node	*stack_b;
 
 	errors_handler(argc, argv);
 	stack_a = init_stack();
