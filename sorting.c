@@ -15,16 +15,16 @@ int	stack_length(s_node *stack)
 
 void	sort_with_3(s_node *stack_a)
 {
-	if(FIRST_NODE_A->value > SECOND_NODE_A->value)
+	if(FIRST_NODE_A->index > SECOND_NODE_A->index)
 	{
-		if(SECOND_NODE_A->value > THIRD_NODE_A->value)
+		if(SECOND_NODE_A->index > THIRD_NODE_A->index)
 		{
 			sa(stack_a);
 			rra(stack_a);
 		}
 		else
 		{
-			if (THIRD_NODE_A->value > FIRST_NODE_A->value)
+			if (THIRD_NODE_A->index > FIRST_NODE_A->index)
 				sa(stack_a);
 			else
 				ra(stack_a);
@@ -32,7 +32,7 @@ void	sort_with_3(s_node *stack_a)
 	}
 	else
 	{
-		if(THIRD_NODE_A->value > FIRST_NODE_A->value)
+		if(THIRD_NODE_A->index > FIRST_NODE_A->index)
 		{
 			sa(stack_a);
 			ra(stack_a);
@@ -44,26 +44,26 @@ void	sort_with_3(s_node *stack_a)
 
 int	find_lower(s_node *stack_a)
 {
-	int min_value, min_position;
+	int min_index, min_position;
 	int counter = 1;
 
 	stack_a = stack_a->next;
-	min_value = stack_a->value;
+	min_index = stack_a->index;
 	
 	while(stack_a->next)
 	{
-		if(stack_a->value <= min_value)
+		if(stack_a->index <= min_index)
 		{
 			min_position = counter;
-			min_value = stack_a->value;
+			min_index = stack_a->index;
 		}
 		stack_a = stack_a->next;
 		counter++;
 	}
-	if(stack_a->value <= min_value)
+	if(stack_a->index <= min_index)
 	{
 		min_position = counter;
-		min_value = stack_a->value;
+		min_index = stack_a->index;
 	}
 	return (min_position);
 }
@@ -73,7 +73,7 @@ int	ordered(s_node *stack_a)
 	stack_a = stack_a->next;
 	while(stack_a->next)
 	{
-		if(stack_a->value > stack_a->next->value)
+		if(stack_a->index > stack_a->next->index)
 			return 0;
 		stack_a = stack_a->next;
 	}
@@ -143,64 +143,6 @@ int	find_next_position(s_node *stack_b)
 	return (max_position);
 }
 
-int	find_near_index(s_node *stack_a, int start_a, int final_a, int start_b, int final_b)
-{
-	int position = 0;
-	int close_from_top = -1;
-	int close_from_bottom = -1;
-	stack_a = stack_a->next;
-	while(stack_a->next)
-	{
-		if(stack_a->index > start_a && stack_a->index <= final_a)
-		{
-			close_from_top = position;
-			break;
-		}
-		if(stack_a->index > start_b && stack_a->index <= final_b)
-		{
-			close_from_top = position;
-			break;
-		}
-		position++;
-		stack_a = stack_a->next;
-	}
-	while(stack_a->next)
-		stack_a = stack_a->next;
-	position = stack_length(stack_a);
-	while(position > 0)
-	{
-		if(stack_a->index > start_a && stack_a->index <= final_a)
-		{
-			close_from_bottom = position;
-			break;
-		}
-		if(stack_a->index > start_b && stack_a->index <= final_b)
-		{
-			close_from_bottom = position;
-			break;
-		}
-		position--;
-		stack_a = stack_a->previous;
-	}
-	if (close_from_top < close_from_bottom)
-		return close_from_top;
-	else
-		return close_from_bottom;
-}
-
-void	bring_up_by_index(s_node *stack_a, int start_a, int final_a, int start_b, int final_b)
-{
-	int i = 0;
-	int number_position;
-	int len = stack_length(start_a);
-	number_position = find_near_index(stack_a, start_a, final_a, start_b, final_b);
-	if(number_position >= len / 2 + 1)
-		while(i++ < len - (number_position - 1))
-			rra(stack_a);
-	else
-		while(i++ < number_position - 1)
-			ra(stack_a);
-}
 void	sort_with_n(s_node *stack_a, s_node *stack_b, int len)
 {
 	//divide in n chunks until len of stack_a equal 0
@@ -285,7 +227,7 @@ void sort(s_node *stack_a, s_node *stack_b)
 	if(ordered(stack_a))
 		return ;
 	if(len == 2)
-		if (FIRST_NODE_A->value > SECOND_NODE_A->value)
+		if (FIRST_NODE_A->index > SECOND_NODE_A->index)
 			sa(stack_a);
 	if(len == 3)
 		sort_with_3(stack_a);
