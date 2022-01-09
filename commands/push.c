@@ -1,14 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/09 14:58:58 by rpaulino          #+#    #+#             */
+/*   Updated: 2022/01/09 14:59:02 by rpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pushswap.h"
 
 void	pb(s_node *stack_a, s_node *stack_b)
 {
-	if(more_than_one(stack_a))
+	s_node	*node;
+	s_node	*to_free;
+
+	if (more_than_one(stack_a))
 		return ;
-	s_node *node = (s_node*)malloc(sizeof(s_node));
-
-	s_node *to_free = stack_a->next;
-
-	if(stack_b->next == NULL)
+	node = (s_node *)malloc(sizeof(s_node));
+	to_free = stack_a->next;
+	if (stack_b->next == NULL)
 	{
 		stack_b->next = node;
 		stack_b->next->value = stack_a->next->value;
@@ -25,7 +38,7 @@ void	pb(s_node *stack_a, s_node *stack_b)
 		node->previous = stack_b;
 		node->next->previous = node;
 	}
-	if(stack_a->next->next == NULL)
+	if (stack_a->next->next == NULL)
 		stack_a->next = NULL;
 	else
 	{
@@ -38,13 +51,14 @@ void	pb(s_node *stack_a, s_node *stack_b)
 
 void	pa(s_node *stack_a, s_node *stack_b)
 {
-	if(more_than_one(stack_b))
+	s_node	*node;
+	s_node	*to_free;
+
+	if (more_than_one(stack_b))
 		return ;
-	s_node *node = (s_node*)malloc(sizeof(s_node));
-
-	s_node *to_free = stack_b->next;
-
-	if(stack_a->next == NULL)
+	node = (s_node *)malloc(sizeof(s_node));
+	to_free = stack_b->next;
+	if (stack_a->next == NULL)
 	{
 		stack_a->next = node;
 		stack_a->next->value = stack_b->next->value;
@@ -61,7 +75,7 @@ void	pa(s_node *stack_a, s_node *stack_b)
 		node->previous = stack_a;
 		node->next->previous = node;
 	}
-	if(stack_b->next->next == NULL)
+	if (stack_b->next->next == NULL)
 		stack_b->next = NULL;
 	else
 	{

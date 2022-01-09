@@ -1,15 +1,27 @@
-#include "../pushswap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/09 15:03:11 by rpaulino          #+#    #+#             */
+/*   Updated: 2022/01/09 15:03:12 by rpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*The last becomes the first!*/
+#include "../pushswap.h"
 
 void	rra(s_node *stack)
 {
-	s_node *start = stack;
-	s_node *last;
-	int counter = 0;
+	s_node	*start;
+	s_node	*last;
+	int		counter;
 
-	if(more_than_one(stack))
+	if (more_than_one(stack))
 		return ;
+	counter = 0;
+	start = stack;
 	while (stack->next)
 	{
 		stack = stack->next;
@@ -32,12 +44,14 @@ void	rra(s_node *stack)
 
 void	rrb(s_node *stack)
 {
-	s_node *start = stack;
-	s_node *last;
-	int counter = 0;
+	s_node	*start;
+	s_node	*last;
+	int		counter;
 
-	if(more_than_one(stack))
+	if (more_than_one(stack))
 		return ;
+	counter = 0;
+	start = stack;
 	while (stack->next)
 	{
 		stack = stack->next;

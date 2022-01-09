@@ -1,13 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/09 15:06:10 by rpaulino          #+#    #+#             */
+/*   Updated: 2022/01/09 15:06:12 by rpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pushswap.h"
 
 void	ra(s_node *stack)
 {
-	s_node *start = stack;
-	s_node *last;
-	int counter = 0;
+	s_node	*start;
+	s_node	*last;
+	int		counter;
 
-	if(more_than_one(stack))
+	if (more_than_one(stack))
 		return ;
+	counter = 0;
+	start = stack;
 	while (stack->next)
 	{
 		stack = stack->next;
@@ -20,7 +34,7 @@ void	ra(s_node *stack)
 		sa(stack);
 		return ;
 	}
-	last->next = stack->next; 
+	last->next = stack->next;
 	stack->next = stack->next->next;
 	last->next->next = NULL;
 	last->next->previous = last;
@@ -30,12 +44,14 @@ void	ra(s_node *stack)
 
 void	rb(s_node *stack)
 {
-	s_node *start = stack;
-	s_node *last;
-	int counter = 0;
+	s_node	*start;
+	s_node	*last;
+	int		counter;
 
-	if(more_than_one(stack))
+	if (more_than_one(stack))
 		return ;
+	counter = 0;
+	start = stack;
 	while (stack->next)
 	{
 		stack = stack->next;
@@ -48,7 +64,7 @@ void	rb(s_node *stack)
 		sb(stack);
 		return ;
 	}
-	last->next = stack->next; 
+	last->next = stack->next;
 	stack->next = stack->next->next;
 	last->next->next = NULL;
 	last->next->previous = last;
