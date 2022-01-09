@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                         :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 15:56:02 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 16:01:37 by rpaulino         ###   ########.fr       */
+/*   Created: 2022/01/09 16:38:24 by rpaulino          #+#    #+#             */
+/*   Updated: 2022/01/09 16:38:26 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# define FIRST_NODE_A stack_a->next
-# define FIRST_NODE_B stack_b->next
-# define SECOND_NODE_A stack_a->next->next
-# define SECOND_NODE_B stack_b->next->next
-# define THIRD_NODE_A stack_a->next->next->next
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 typedef struct node
 {

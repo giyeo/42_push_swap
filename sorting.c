@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:29:11 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 16:29:12 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 16:38:02 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ int	stack_length(t_node *stack)
 
 void	sort_with_3(t_node *stack_a)
 {
-	if (FIRST_NODE_A->index > SECOND_NODE_A->index)
+	if (stack_a->next->index > stack_a->next->next->index)
 	{
-		if (SECOND_NODE_A->index > THIRD_NODE_A->index)
+		if (stack_a->next->next->index > stack_a->next->next->next->index)
 		{
 			sa(stack_a);
 			rra(stack_a);
 		}
 		else
 		{
-			if (THIRD_NODE_A->index > FIRST_NODE_A->index)
+			if (stack_a->next->next->next->index > stack_a->next->index)
 				sa(stack_a);
 			else
 				ra(stack_a);
@@ -44,7 +44,7 @@ void	sort_with_3(t_node *stack_a)
 	}
 	else
 	{
-		if (THIRD_NODE_A->index > FIRST_NODE_A->index)
+		if (stack_a->next->next->next->index > stack_a->next->index)
 		{
 			sa(stack_a);
 			ra(stack_a);
@@ -165,22 +165,23 @@ void	sort_with_n(t_node *stack_a, t_node *stack_b, int len)
 	int	last_down;
 	int	counter;
 
+	chunk = 14;
+	if (len > 450)
+		chunk = 29;
 	up = (len / 2) + chunk;
 	down = (len / 2) - chunk;
 	last_up = len / 2;
 	last_down = len / 2;
 	counter = 0;
-	chunk = 14;
-	if (len > 450)
-		chunk = 29;
 	while (stack_length(stack_a) > 0)
 	{
-		if (FIRST_NODE_A->index >= last_up && FIRST_NODE_A->index < up)
+		if (stack_a->next->index >= last_up && stack_a->next->index < up)
 		{
 			counter++;
 			pb(stack_a, stack_b);
 		}
-		else if (FIRST_NODE_A->index >= down && FIRST_NODE_A->index < last_down)
+		else if (stack_a->next->index >= down
+			&& stack_a->next->index < last_down)
 		{
 			counter++;
 			pb(stack_a, stack_b);
@@ -245,7 +246,7 @@ void	sort(t_node *stack_a, t_node *stack_b)
 	if (ordered(stack_a))
 		return ;
 	if (len == 2)
-		if (FIRST_NODE_A->index > SECOND_NODE_A->index)
+		if (stack_a->next->index > stack_a->next->next->index)
 			sa(stack_a);
 	if (len == 3)
 		sort_with_3(stack_a);
