@@ -1,10 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_error.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/09 15:13:23 by rpaulino          #+#    #+#             */
+/*   Updated: 2022/01/09 15:14:14 by rpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pushswap.h"
 
-void error()
+void	error(void)
 {
-	char *error = "Error";
-	char temp = '\n';
+	char	*error;
+	char	temp;
 
+	error = "Error";
+	temp = '\n';
 	write(1, error, 5);
 	write(1, &temp, 1);
 	exit(-1);
@@ -12,14 +26,14 @@ void error()
 
 void	isbigger_handler(int argc, char *argv[])
 {
-	int i;
+	int	i;
 
 	i = 1;
-	while(i < argc)
+	while (i < argc)
 	{
-		if(ft_atoi_long(argv[i]) > 2147483647)
+		if (ft_atoi_long(argv[i]) > 2147483647)
 			error();
-		if(ft_atoi_long(argv[i]) < -2147483648) 
+		if (ft_atoi_long(argv[i]) < -2147483648)
 			error();
 		i++;
 	}
@@ -27,15 +41,15 @@ void	isbigger_handler(int argc, char *argv[])
 
 void	isduplic_handler(int argc, char *argv[])
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while(i < argc - 1)
+	while (i < argc - 1)
 	{
 		j = i + 1;
-		while(j < argc)
-			if(ft_strcmp(argv[i], argv[j++]))
+		while (j < argc)
+			if (ft_strcmp(argv[i], argv[j++]))
 				error();
 		i++;
 	}
@@ -43,18 +57,18 @@ void	isduplic_handler(int argc, char *argv[])
 
 void	isnumber_handler(int argc, char *argv[])
 {
-	int i;
-	int j;
-	int lenght;
-	char *string;
+	int		i;
+	int		j;
+	int		lenght;
+	char	*string;
 
 	i = 0;
-	while(i < argc - 1)
+	while (i < argc - 1)
 	{
 		j = 0;
 		string = argv[i++ + 1];
 		lenght = ft_strlen(string);
-		while(j < lenght)
+		while (j < lenght)
 			if (!ischardigit(string[j++]))
 				error();
 	}
@@ -63,5 +77,5 @@ void	isnumber_handler(int argc, char *argv[])
 void	isfewarg_handler(int argc)
 {
 	if (argc == 1)
-			error();
+		error();
 }
