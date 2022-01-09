@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   yprint_stacks.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/09 15:51:03 by rpaulino          #+#    #+#             */
+/*   Updated: 2022/01/09 15:51:26 by rpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
-int		print_stack(s_node *stack)
+int	print_stack(s_node *stack)
 {
-	char *temp;
-	char s = ' ';
+	char	*temp;
+	char	s;
 
+	s = ' ';
 	temp = ft_itoa(stack->index);
 	write(1, temp, ft_strlen(temp));
 	write(1, &s, 1);
@@ -12,10 +25,10 @@ int		print_stack(s_node *stack)
 	return (1);
 }
 
-void	print_stack_foot()
+void	print_stack_foot(void)
 {
-	char *sep;
-	char *names;
+	char	*sep;
+	char	*names;
 
 	sep = "- -\n";
 	names = "a b\n";
@@ -26,26 +39,27 @@ void	print_stack_foot()
 
 void	print_stacks(s_node *stack_a, s_node *stack_b)
 {
-	int printed;
-	char temp;
-	
+	int		printed;
+	char	temp;
+	char	*s;
+
 	temp = '\n';
 	printed = 1;
-	while(printed)
+	while (printed)
 	{
 		printed = 0;
-		if(stack_a->next)
+		if (stack_a->next)
 		{
 			stack_a = stack_a->next;
 			printed = print_stack(stack_a);
 		}
 		else
 		{
-			char *s = "  ";
-			if(stack_b->next)
+			s = "  ";
+			if (stack_b->next)
 				write(1, s, 2);
 		}
-		if(stack_b->next)
+		if (stack_b->next)
 		{
 			stack_b = stack_b->next;
 			printed = print_stack(stack_b);
@@ -58,52 +72,57 @@ void	print_stacks(s_node *stack_a, s_node *stack_b)
 
 int	print_command(char *name)
 {
-	static int count = 0;
-	static int checkA = 0;
-	static int checkB = 0;
-	char new_line = '\n';
-	if(ft_strcmp(name, "ra"))
+	static int	count;
+	static int	check_a;
+	static int	check_b;
+	char		new_line;
+
+	count = 0;
+	check_a = 0;
+	check_b = 0;
+	new_line = '\n';
+	if (ft_strcmp(name, "ra"))
 	{
-		if(checkA)
+		if (check_a)
 		{
 			write(1, name, ft_strlen(name));
 			write(1, &new_line, 1);
 		}
-		checkA = 1;
+		check_a = 1;
 	}
 	else if (ft_strcmp(name, "rb"))
 	{
-		if(checkB)
+		if (check_b)
 		{
 			write(1, name, ft_strlen(name));
 			write(1, &new_line, 1);
 		}
-		checkB = 1;
+		check_b = 1;
 	}
 	else
 	{
-		if(checkA)
+		if (check_a)
 		{
 			write(1, "ra", 2);
 			write(1, &new_line, 1);
 		}
-		if(checkB)
+		if (check_b)
 		{
 			write(1, "rb", 2);
 			write(1, &new_line, 1);
 		}
-		checkA = 0;
-		checkB = 0;
+		check_a = 0;
+		check_b = 0;
 		write(1, name, ft_strlen(name));
 		write(1, &new_line, 1);
 	}
-	if(checkA && checkB)
+	if (check_a && check_b)
 	{
-		checkA = 0;
-		checkB = 0;
+		check_a = 0;
+		check_b = 0;
 		write(1, "rr", 2);
 		write(1, &new_line, 1);
 	}
 	count++;
-	return 0;
+	return (0);
 }
