@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   f_long_atoi.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/09 15:19:16 by rpaulino          #+#    #+#             */
+/*   Updated: 2022/01/09 15:20:06 by rpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pushswap.h"
 
 long long int	ft_isdigit(long long int argument)
@@ -16,7 +28,8 @@ static long long int	ft_isspace(long long int chr)
 		return (0);
 }
 
-static long long int	calc_atoi(const char *str, long long int len, long long int counter)
+static long long int	calc_atoi(const char *str, long long int len,
+									long long int counter)
 {
 	long long int	result;
 
