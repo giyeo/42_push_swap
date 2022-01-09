@@ -6,13 +6,13 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:19:11 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:19:12 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 15:57:49 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-int	more_than_one(s_node *stack)
+int	more_than_one(t_node *stack)
 {
 	if (stack->next == NULL)
 		return (1);

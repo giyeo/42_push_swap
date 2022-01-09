@@ -6,34 +6,34 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:15:25 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:16:30 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 15:57:49 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-s_node	*init_stack(void)
+t_node	*init_stack(void)
 {
-	s_node	*stack;
+	t_node	*stack;
 
-	stack = (s_node *)malloc(sizeof(s_node));
+	stack = (t_node *)malloc(sizeof(t_node));
 	stack->next = NULL;
 	stack->previous = NULL;
 	return (stack);
 }
 
-void	populate(s_node *stack, int size, char *argv[], int *indexator)
+void	populate(t_node *stack, int size, char *argv[], int *indexator)
 {
 	int	i;
 
 	i = 0;
-	stack->next = (s_node *)malloc(sizeof(s_node));
+	stack->next = (t_node *)malloc(sizeof(t_node));
 	stack->next->previous = stack;
 	stack->previous = NULL;
 	stack = stack->next;
 	while (i < size - 2)
 	{
-		stack->next = (s_node *)malloc(sizeof(s_node));
+		stack->next = (t_node *)malloc(sizeof(t_node));
 		stack->next->previous = stack;
 		stack->value = atoi(argv[i + 1]);
 		stack->index = indexator[i];
@@ -46,7 +46,7 @@ void	populate(s_node *stack, int size, char *argv[], int *indexator)
 	free(indexator);
 }
 
-void	free_stack(s_node *stack)
+void	free_stack(t_node *stack)
 {
 	while (stack->next)
 		stack = stack->next;

@@ -6,16 +6,16 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:03:11 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:03:12 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 15:57:49 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-void	rra(s_node *stack)
+void	rra(t_node *stack)
 {
-	s_node	*start;
-	s_node	*last;
+	t_node	*start;
+	t_node	*last;
 	int		counter;
 
 	if (more_than_one(stack))
@@ -42,10 +42,10 @@ void	rra(s_node *stack)
 	print_command("rra");
 }
 
-void	rrb(s_node *stack)
+void	rrb(t_node *stack)
 {
-	s_node	*start;
-	s_node	*last;
+	t_node	*start;
+	t_node	*last;
 	int		counter;
 
 	if (more_than_one(stack))
@@ -72,7 +72,7 @@ void	rrb(s_node *stack)
 	print_command("rrb");
 }
 
-void	rrr(s_node *stack_a, s_node *stack_b)
+void	rrr(t_node *stack_a, t_node *stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);

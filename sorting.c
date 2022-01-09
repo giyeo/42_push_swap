@@ -1,6 +1,6 @@
 #include "pushswap.h"
 
-int	stack_length(s_node *stack)
+int	stack_length(t_node *stack)
 {
 	int counter;
 
@@ -13,7 +13,7 @@ int	stack_length(s_node *stack)
 	return (counter);
 }
 
-void	sort_with_3(s_node *stack_a)
+void	sort_with_3(t_node *stack_a)
 {
 	if(FIRST_NODE_A->index > SECOND_NODE_A->index)
 	{
@@ -42,7 +42,7 @@ void	sort_with_3(s_node *stack_a)
 	}
 }
 
-int	find_lower(s_node *stack_a)
+int	find_lower(t_node *stack_a)
 {
 	int min_index, min_position;
 	int counter = 1;
@@ -68,7 +68,7 @@ int	find_lower(s_node *stack_a)
 	return (min_position);
 }
 
-int	ordered(s_node *stack_a)
+int	ordered(t_node *stack_a)
 {
 	stack_a = stack_a->next;
 	while(stack_a->next)
@@ -80,7 +80,7 @@ int	ordered(s_node *stack_a)
 	return 1;
 }
 
-void	remove_lower(s_node *stack_a, s_node *stack_b, int len)
+void	remove_lower(t_node *stack_a, t_node *stack_b, int len)
 {
 	int i = 0;
 	int lower_number_position;
@@ -97,7 +97,7 @@ void	remove_lower(s_node *stack_a, s_node *stack_b, int len)
 	pb(stack_a, stack_b);
 }
 
-void	sort_with_5(s_node *stack_a, s_node *stack_b)
+void	sort_with_5(t_node *stack_a, t_node *stack_b)
 {
 	int len = stack_length(stack_a);
 	int len2 = len;
@@ -117,7 +117,7 @@ void	sort_with_5(s_node *stack_a, s_node *stack_b)
 
 
 
-int	find_next_position(s_node *stack_b)
+int	find_next_position(t_node *stack_b)
 {
 	int max_index, max_position;
 	int counter = 1;
@@ -143,7 +143,7 @@ int	find_next_position(s_node *stack_b)
 	return (max_position);
 }
 
-void	sort_with_n(s_node *stack_a, s_node *stack_b, int len)
+void	sort_with_n(t_node *stack_a, t_node *stack_b, int len)
 {
 	//divide in n chunks until len of stack_a equal 0
 	int chunk = 14;
@@ -218,7 +218,7 @@ void	sort_with_n(s_node *stack_a, s_node *stack_b, int len)
 	}
 }
 
-void sort(s_node *stack_a, s_node *stack_b)
+void sort(t_node *stack_a, t_node *stack_b)
 {
 	int len = stack_length(stack_a);
 

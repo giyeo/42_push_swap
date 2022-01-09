@@ -6,20 +6,20 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 14:58:58 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 14:59:02 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 15:57:49 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-void	pb(s_node *stack_a, s_node *stack_b)
+void	pb(t_node *stack_a, t_node *stack_b)
 {
-	s_node	*node;
-	s_node	*to_free;
+	t_node	*node;
+	t_node	*to_free;
 
 	if (more_than_one(stack_a))
 		return ;
-	node = (s_node *)malloc(sizeof(s_node));
+	node = (t_node *)malloc(sizeof(t_node));
 	to_free = stack_a->next;
 	if (stack_b->next == NULL)
 	{
@@ -49,14 +49,14 @@ void	pb(s_node *stack_a, s_node *stack_b)
 	free(to_free);
 }
 
-void	pa(s_node *stack_a, s_node *stack_b)
+void	pa(t_node *stack_a, t_node *stack_b)
 {
-	s_node	*node;
-	s_node	*to_free;
+	t_node	*node;
+	t_node	*to_free;
 
 	if (more_than_one(stack_b))
 		return ;
-	node = (s_node *)malloc(sizeof(s_node));
+	node = (t_node *)malloc(sizeof(t_node));
 	to_free = stack_b->next;
 	if (stack_a->next == NULL)
 	{

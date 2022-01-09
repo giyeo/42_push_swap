@@ -6,13 +6,13 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:51:03 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:51:26 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 15:57:49 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	print_stack(s_node *stack)
+int	print_stack(t_node *stack)
 {
 	char	*temp;
 	char	s;
@@ -37,7 +37,7 @@ void	print_stack_foot(void)
 	write(1, sep, 4);
 }
 
-void	print_stacks(s_node *stack_a, s_node *stack_b)
+void	print_stacks(t_node *stack_a, t_node *stack_b)
 {
 	int		printed;
 	char	temp;

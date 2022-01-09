@@ -6,13 +6,13 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:08:58 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:09:06 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 15:57:49 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-void	sa(s_node *stack)
+void	sa(t_node *stack)
 {
 	int	value1;
 
@@ -31,7 +31,7 @@ void	sa(s_node *stack)
 	}
 }
 
-void	sb(s_node *stack)
+void	sb(t_node *stack)
 {
 	int	value1;
 
@@ -50,7 +50,7 @@ void	sb(s_node *stack)
 	}
 }
 
-void	ss(s_node *stack_a, s_node *stack_b)
+void	ss(t_node *stack_a, t_node *stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);

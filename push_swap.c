@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:28:11 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:28:24 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 15:57:49 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	errors_handler(int argc, char *argv[])
 
 int	main(int argc, char *argv[])
 {
-	s_node	*stack_a;
-	s_node	*stack_b;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
 	errors_handler(argc, argv);
 	stack_a = init_stack();
