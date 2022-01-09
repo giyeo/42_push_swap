@@ -6,11 +6,11 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:18:57 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:18:58 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 16:03:19 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../push_swap.h"
 
 int	ischardigit(char var)
 {

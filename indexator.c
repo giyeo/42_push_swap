@@ -6,11 +6,11 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:24:49 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:26:59 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 16:03:19 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 
 typedef struct index
 {

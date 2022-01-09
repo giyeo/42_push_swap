@@ -6,11 +6,11 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:17:39 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:17:40 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 16:03:38 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../push_swap.h"
 
 int	ft_isdigit_int(int argument)
 {

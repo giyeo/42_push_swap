@@ -6,11 +6,11 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:28:11 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 15:57:49 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 16:03:36 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 
 void	errors_handler(int argc, char *argv[])
 {
