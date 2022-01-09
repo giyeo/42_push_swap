@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:51:03 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 16:03:19 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 16:11:53 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,11 @@ void	print_stacks(t_node *stack_a, t_node *stack_b)
 
 int	print_command(char *name)
 {
-	static int	count;
-	static int	check_a;
-	static int	check_b;
+	static int	count = 0;
+	static int	check_a = 0;
+	static int	check_b = 0;
 	char		new_line;
 
-	count = 0;
-	check_a = 0;
-	check_b = 0;
 	new_line = '\n';
 	if (ft_strcmp(name, "ra"))
 	{
