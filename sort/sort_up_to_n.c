@@ -6,20 +6,11 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 23:41:35 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/10 00:38:35 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/10 00:42:04 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-typedef struct sort
-{
-	int	up;
-	int	down;
-	int	last_up;
-	int	last_down;
-	int	len;
-}	t_sort;
+#include "../push_swap.h"
 
 int	push_back_to_stack_a(t_node *stack_a, t_node *stack_b, int len_b, int mode)
 {

@@ -6,17 +6,11 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:24:49 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 21:47:59 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/10 00:43:10 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-typedef struct index
-{
-	int	value;
-	int	index;
-}	t_index;
+#include "../push_swap.h"
 
 t_index	*fill_array(int argc, t_index *array, int i, int j)
 {

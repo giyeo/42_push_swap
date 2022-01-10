@@ -6,11 +6,11 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:51:03 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 21:38:19 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/10 00:44:38 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	case_print_rx(char *name, char new_line, int check)
 {

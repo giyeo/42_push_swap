@@ -6,11 +6,11 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:29:11 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/10 00:02:28 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/10 00:42:19 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	stack_length(t_node *stack)
 {

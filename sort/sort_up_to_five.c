@@ -6,11 +6,11 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 21:51:55 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 21:53:27 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/10 00:42:11 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	find_lower(t_node *stack_a)
 {

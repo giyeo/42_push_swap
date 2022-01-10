@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:38:24 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/10 00:02:43 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/10 00:40:39 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,21 @@ typedef struct node
 	struct node	*next;
 	struct node	*previous;
 }	t_node;
+
+typedef struct index
+{
+	int	value;
+	int	index;
+}	t_index;
+
+typedef struct sort
+{
+	int	up;
+	int	down;
+	int	last_up;
+	int	last_down;
+	int	len;
+}	t_sort;
 
 /*	Utils	*/
 int				ischardigit(char var);
