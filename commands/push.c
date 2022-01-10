@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 14:58:58 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 21:03:05 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 21:21:25 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ void	px_operation(t_node *dest_stack, t_node *src_stack, t_node *new_node)
 void	pb(t_node *stack_a, t_node *stack_b)
 {
 	t_node	*node;
+	t_node	*to_free;
 
 	if (more_than_one(stack_a))
 		return ;
 	node = (t_node *)malloc(sizeof(t_node));
+	to_free = stack_a->next;
 	if (stack_b->next == NULL)
 		px_operation_case_null(stack_b, stack_a, node);
 	else
@@ -51,15 +53,18 @@ void	pb(t_node *stack_a, t_node *stack_b)
 		stack_a->next->previous = stack_a;
 	}
 	print_command("pb");
+	free(to_free);
 }
 
 void	pa(t_node *stack_a, t_node *stack_b)
 {
 	t_node	*node;
+	t_node	*to_free;
 
 	if (more_than_one(stack_b))
 		return ;
 	node = (t_node *)malloc(sizeof(t_node));
+	to_free = stack_b->next;
 	if (stack_a->next == NULL)
 		px_operation_case_null(stack_a, stack_b, node);
 	else
@@ -72,4 +77,5 @@ void	pa(t_node *stack_a, t_node *stack_b)
 		stack_b->next->previous = stack_b;
 	}
 	print_command("pa");
+	free(to_free);
 }
