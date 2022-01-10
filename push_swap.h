@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:38:24 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 16:38:26 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 21:25:50 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ typedef struct node
 /*	Utils	*/
 int				ischardigit(char var);
 int				print_command(char *name);
-int				print_stack(t_node *stack);
-void			print_stacks(t_node *stack_a, t_node *stack_b);
 char			*ft_itoa(int n);
 int				ft_atoi(const char *str);
 size_t			ft_strlen(const char *pointer);
