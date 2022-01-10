@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:24:49 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 16:03:19 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 21:47:59 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,15 @@ typedef struct index
 	int	index;
 }	t_index;
 
-int	*index_it(int argc, char *argv[])
+t_index	*fill_array(int argc, t_index *array, int i, int j)
 {
-	int		i;
-	int		j;
 	int		minor;
 	int		major;
-	int		*return_it;
-	t_index	*array;
 
-	array = (t_index *)malloc(sizeof(t_index) * (argc - 1));
-	return_it = (int *)malloc(sizeof(int) * (argc - 1));
-	major = -2147483648;
-	minor = 2147483647;
-	i = -1;
-	j = 0;
-	while (++i < argc - 1)
-		array[i].value = atoi(argv[i + 1]);
-	i = -1;
+	major = INT_MIN;
 	while (j < argc - 1)
 	{
-		minor = 2147483647;
+		minor = INT_MAX;
 		while (++i < argc - 1)
 		{
 			if (array[i].value <= minor && array[i].value > major)
@@ -51,6 +39,24 @@ int	*index_it(int argc, char *argv[])
 		major = minor;
 		i = -1;
 	}
+	return (array);
+}
+
+int	*index_it(int argc, char *argv[])
+{
+	int		i;
+	int		j;
+	int		*return_it;
+	t_index	*array;
+
+	array = (t_index *)malloc(sizeof(t_index) * (argc - 1));
+	return_it = (int *)malloc(sizeof(int) * (argc - 1));
+	i = -1;
+	j = 0;
+	while (++i < argc - 1)
+		array[i].value = atoi(argv[i + 1]);
+	i = -1;
+	array = fill_array(argc, array, i, j);
 	while (++i < argc - 1)
 		return_it[i] = array[i].index;
 	free(array);
