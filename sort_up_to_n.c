@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 23:41:35 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 23:59:21 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/10 00:38:35 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,27 @@ typedef struct sort
 	int	len;
 }	t_sort;
 
-int	find_next_position(t_node *stack_b)
+int	push_back_to_stack_a(t_node *stack_a, t_node *stack_b, int len_b, int mode)
 {
-	int	max_index;
-	int	max_position;
-	int	counter;
+	int	swap_signal;
 
-	counter = 1;
-	stack_b = stack_b->next;
-	max_index = stack_b->index;
-	while (stack_b->next)
+	swap_signal = 0;
+	while (stack_b->next->index != len_b - 1)
 	{
-		if (stack_b->index >= max_index)
+		if (stack_b->next->index == len_b - 2)
 		{
-			max_position = counter;
-			max_index = stack_b->index;
+			pa(stack_a, stack_b);
+			swap_signal = 1;
 		}
-		stack_b = stack_b->next;
-		counter++;
+		else
+		{
+			if (mode)
+				rb(stack_b);
+			else
+				rrb(stack_b);
+		}
 	}
-	if (stack_b->index >= max_index)
-	{
-		max_position = counter;
-		max_index = stack_b->index;
-	}
-	return (max_position);
+	return (swap_signal);
 }
 
 void	bring_back_to_stack_a(t_node *stack_a, t_node *stack_b)
@@ -60,31 +56,9 @@ void	bring_back_to_stack_a(t_node *stack_a, t_node *stack_b)
 		position = find_next_position(stack_b);
 		swap_signal = 0;
 		if (position >= len_b / 2 + 1)
-		{
-			while (stack_b->next->index != len_b - 1)
-			{
-				if (stack_b->next->index == len_b - 2)
-				{
-					pa(stack_a, stack_b);
-					swap_signal = 1;
-				}
-				else
-					rrb(stack_b);
-			}
-		}
+			swap_signal = push_back_to_stack_a(stack_a, stack_b, len_b, 0);
 		else
-		{
-			while (stack_b->next->index != len_b - 1)
-			{
-				if (stack_b->next->index == len_b - 2)
-				{
-					pa(stack_a, stack_b);
-					swap_signal = 1;
-				}
-				else
-					rb(stack_b);
-			}
-		}
+			swap_signal = push_back_to_stack_a(stack_a, stack_b, len_b, 1);
 		pa(stack_a, stack_b);
 		if (swap_signal)
 			sa(stack_a);

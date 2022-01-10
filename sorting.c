@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:29:11 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 23:52:44 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/10 00:02:28 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,33 @@ int	ordered(t_node *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (1);
+}
+
+int	find_next_position(t_node *stack_b)
+{
+	int	max_index;
+	int	max_position;
+	int	counter;
+
+	counter = 1;
+	stack_b = stack_b->next;
+	max_index = stack_b->index;
+	while (stack_b->next)
+	{
+		if (stack_b->index >= max_index)
+		{
+			max_position = counter;
+			max_index = stack_b->index;
+		}
+		stack_b = stack_b->next;
+		counter++;
+	}
+	if (stack_b->index >= max_index)
+	{
+		max_position = counter;
+		max_index = stack_b->index;
+	}
+	return (max_position);
 }
 
 void	sort(t_node *stack_a, t_node *stack_b)
