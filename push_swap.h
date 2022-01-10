@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:38:24 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 21:25:50 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 21:57:07 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,9 @@ void			sort(t_node *stack_a, t_node *stack_b);
 int				find_lower(t_node *stack_a);
 int				*index_it(int argc, char *argv[]);
 int				stack_length(t_node *stack);
+int				stack_length(t_node *stack);
+int				ordered(t_node *stack_a);
+void			sort_with_3(t_node *stack_a);
+void			sort_with_5(t_node *stack_a, t_node *stack_b);
+void			sort_with_n(t_node *stack_a, t_node *stack_b, int len);
 #endif
