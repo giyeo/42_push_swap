@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:03:11 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 16:03:36 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/09 21:08:24 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,8 @@ void	rra(t_node *stack)
 		return ;
 	counter = 0;
 	start = stack;
-	while (stack->next)
-	{
+	while (stack->next && ++counter)
 		stack = stack->next;
-		counter++;
-	}
 	last = stack;
 	stack = start;
 	if (counter == 2)
@@ -52,11 +49,8 @@ void	rrb(t_node *stack)
 		return ;
 	counter = 0;
 	start = stack;
-	while (stack->next)
-	{
+	while (stack->next && ++counter)
 		stack = stack->next;
-		counter++;
-	}
 	last = stack;
 	stack = start;
 	if (counter == 2)
