@@ -12,55 +12,55 @@
 
 #include "../push_swap.h"
 
-int	case_print_rx(char *name, char new_line, int check)
+int	case_print_rx(char *string, char new_line, int check)
 {
 	if (check)
 	{
-		write(1, name, ft_strlen(name));
+		write(1, string, ft_strlen(string));
 		write(1, &new_line, 1);
 	}
 	return (1);
 }
 
-void	case_print(char *name, char new_line, int check_a, int check_b)
+void	case_print(char *string, char new_line, int check_ra, int check_rb)
 {
-	if (check_a)
+	if (check_ra)
 	{
 		write(1, "ra", 2);
 		write(1, &new_line, 1);
 	}
-	if (check_b)
+	if (check_rb)
 	{
 		write(1, "rb", 2);
 		write(1, &new_line, 1);
 	}
-	if (ft_strcmp(name, ""))
+	if (ft_strcmp(string, ""))
 			new_line = '\0';
-	write(1, name, ft_strlen(name));
+	write(1, string, ft_strlen(string));
 	write(1, &new_line, 1);
 }
 
-int	print_command(char *name)
+int	print_command(char *string)
 {
-	static int	check_a = 0;
-	static int	check_b = 0;
+	static int	check_ra = 0;
+	static int	check_rb = 0;
 	char		new_line;
 
 	new_line = '\n';
-	if (ft_strcmp(name, "ra"))
-		check_a = case_print_rx(name, new_line, check_a);
-	else if (ft_strcmp(name, "rb"))
-		check_b = case_print_rx(name, new_line, check_b);
+	if (ft_strcmp(string, "ra"))
+		check_ra = case_print_rx(string, new_line, check_ra);
+	else if (ft_strcmp(string, "rb"))
+		check_rb = case_print_rx(string, new_line, check_rb);
 	else
 	{
-		case_print(name, new_line, check_a, check_b);
-		check_a = 0;
-		check_b = 0;
+		case_print(string, new_line, check_ra, check_rb);
+		check_ra = 0;
+		check_rb = 0;
 	}
-	if (check_a && check_b)
+	if (check_ra && check_rb)
 	{
-		check_a = 0;
-		check_b = 0;
+		check_ra = 0;
+		check_rb = 0;
 		write(1, "rr", 2);
 		write(1, &new_line, 1);
 	}
