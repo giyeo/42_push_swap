@@ -82,4 +82,5 @@ void	sort(t_node *stack_a, t_node *stack_b)
 		sort_with_5(stack_a, stack_b);
 	else
 		sort_with_n(stack_a, stack_b, len);
+	print_command("");
 }

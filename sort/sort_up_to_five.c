@@ -52,8 +52,6 @@ void	remove_lower(t_node *stack_a, t_node *stack_b, int len)
 	else
 		while (i++ < lower_number_position - 1)
 			ra(stack_a);
-	if (ordered(stack_a))
-		exit(0);
 	pb(stack_a, stack_b);
 }
 

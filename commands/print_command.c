@@ -34,6 +34,8 @@ void	case_print(char *name, char new_line, int check_a, int check_b)
 		write(1, "rb", 2);
 		write(1, &new_line, 1);
 	}
+	if (ft_strcmp(name, ""))
+			new_line = '\0';
 	write(1, name, ft_strlen(name));
 	write(1, &new_line, 1);
 }
