@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:13:23 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 16:03:36 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/15 13:53:09 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	error(void)
 	temp = '\n';
 	write(1, error, 5);
 	write(1, &temp, 1);
-	exit(-1);
+	exit(1);
 }
 
 void	isbigger_handler(int argc, char *argv[])
@@ -54,7 +54,7 @@ void	isduplic_handler(int argc, char *argv[])
 		i++;
 	}
 }
-
+#include <stdio.h>
 void	isnumber_handler(int argc, char *argv[])
 {
 	int		i;
@@ -68,14 +68,18 @@ void	isnumber_handler(int argc, char *argv[])
 		j = 0;
 		string = argv[i++ + 1];
 		lenght = ft_strlen(string);
+		if (lenght == 0)
+			error();
 		while (j < lenght)
+		{
 			if (!ischardigit(string[j++]))
 				error();
+		}
 	}
 }
 
 void	isfewarg_handler(int argc)
 {
 	if (argc == 1)
-		error();
+		exit(1);
 }

@@ -14,6 +14,12 @@
 #include "../push_swap.h"
 #include <stdio.h>
 
+void	checker_error(void)
+{
+	printf("Error");
+	exit(1);
+}
+
 void	exec_command(char *line, t_node *stack_a, t_node *stack_b)
 {
 	if (ft_strcmp(line, "sa"))
@@ -39,7 +45,7 @@ void	exec_command(char *line, t_node *stack_a, t_node *stack_b)
 	else if (ft_strcmp(line, "rrr"))
 		rrr_checker(stack_a, stack_b);
 	else
-		printf("error");
+		checker_error();
 }
 
 void	ordered_checker(t_node *stack_a, t_node *stack_b)
@@ -104,6 +110,14 @@ void	print_stack(t_node *stack_a, t_node *stack_b)
 	printf("--\n");
 }
 
+void	errors_handler(int argc, char *argv[])
+{
+	isfewarg_handler(argc);
+	isnumber_handler(argc, argv);
+	isbigger_handler(argc, argv);
+	isduplic_handler(argc, argv);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_node	*stack_a;
@@ -112,6 +126,7 @@ int	main(int argc, char *argv[])
 	int		i;
 
 	i = 1;
+	errors_handler(argc, argv);
 	stack_a = init_stack();
 	stack_b = init_stack();
 	populate_checker(stack_a, argc, argv);
