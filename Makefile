@@ -15,7 +15,7 @@ SRC_BONUS := ./commands/push.c ./commands/reverse.c ./commands/rotate.c ./comman
 		./utils/utils.c ./utils/utils_llists.c ./utils/f_long_atoi.c \
 		./sort/sorting.c ./commands/print_command.c ./handlers/handle_index.c \
 		./sort/sort_up_to_five.c ./sort/sort_up_to_n.c \
-		./bonus/get_next_line.c ./bonus/get_next_line_utils.c ./bonus/main.c \
+		./bonus/get_next_line.c ./bonus/get_next_line_utils.c ./bonus/checker.c \
 		./bonus/commands_checker/push.c ./bonus/commands_checker/swap.c ./bonus/commands_checker/reverse.c \
 		./bonus/commands_checker/rotate.c
 
@@ -23,7 +23,7 @@ OBJS_BONUS := $(SRC_BONUS:.c=.o)
 
 FLAG := -fsanitize=address
 
-CFLAG := -Wall -Wextra
+CFLAG := -Wall -Wextra -Werror
 
 all: $(NAME)
 
@@ -49,3 +49,5 @@ fclean: clean
 	rm -f $(NAME_BONUS)
 
 re: fclean all
+
+re_bonus: fclean bonus

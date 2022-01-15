@@ -12,13 +12,6 @@
 
 #include "get_next_line.h"
 #include "../push_swap.h"
-#include <stdio.h>
-
-void	checker_error(void)
-{
-	printf("Error");
-	exit(1);
-}
 
 void	exec_command(char *line, t_node *stack_a, t_node *stack_b)
 {
@@ -45,9 +38,9 @@ void	exec_command(char *line, t_node *stack_a, t_node *stack_b)
 	else if (ft_strcmp(line, "rrr"))
 		rrr_checker(stack_a, stack_b);
 	else
-		checker_error();
+		error();
 }
-
+#include <stdio.h>
 void	ordered_checker(t_node *stack_a, t_node *stack_b)
 {
 	stack_a = stack_a->next;
@@ -85,29 +78,6 @@ void	populate_checker(t_node *stack, int size, char *argv[])
 	}
 	stack->value = atoi(argv[i + 1]);
 	stack->next = NULL;
-}
-
-void	print_stack(t_node *stack_a, t_node *stack_b)
-{
-	stack_a = stack_a->next;
-	while (stack_a->next)
-	{
-		printf("%d\n", stack_a->value);
-		stack_a = stack_a->next;
-	}
-	printf("%d\n", stack_a->value);
-	printf("&&\n");
-	if (stack_b->next)
-	{
-		stack_b = stack_b->next;
-		while (stack_b->next)
-		{
-			printf("%d\n", stack_b->value);
-			stack_b = stack_b->next;
-		}
-		printf("%d\n", stack_b->value);
-	}
-	printf("--\n");
 }
 
 void	errors_handler(int argc, char *argv[])

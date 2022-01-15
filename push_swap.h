@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:38:24 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/15 00:11:48 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:07:31 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void			isduplic_handler(int argc, char *argv[]);
 void			isnumber_handler(int argc, char *argv[]);
 void			errors_handler(int argc, char *argv[]);
 void			isfewarg_handler(int argc);
+void			error(void);
 /*	INIT Stack	*/
 t_node			*init_stack(void);
 void			populate(t_node *stack, int size, char *argv[], int *indexator);

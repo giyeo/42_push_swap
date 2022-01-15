@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:13:23 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/15 13:53:09 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:05:01 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	isduplic_handler(int argc, char *argv[])
 		i++;
 	}
 }
-#include <stdio.h>
+
 void	isnumber_handler(int argc, char *argv[])
 {
 	int		i;
