@@ -6,13 +6,13 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 15:03:44 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/03/21 11:52:05 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/15 12:40:46 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char		*ft_strdup(const char *s)
+static char	*ft_strdup(const char *s)
 {
 	size_t	len;
 	char	*dup;
@@ -24,7 +24,7 @@ static char		*ft_strdup(const char *s)
 	return (dup);
 }
 
-static char		*ft_strchr(const char *str, int c)
+static char	*ft_strchr(const char *str, int c)
 {
 	int		counter;
 	int		len;
@@ -47,7 +47,7 @@ static char		*ft_strchr(const char *str, int c)
 
 static size_t	get_next_end(char *statico)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (statico[i] != '\n' && statico[i] != '\0')
@@ -55,9 +55,9 @@ static size_t	get_next_end(char *statico)
 	return (i);
 }
 
-static int		get_next_return(int n, char **statico, char **line)
+static int	get_next_return(int n, char **statico, char **line)
 {
-	char *temp;
+	char	*temp;
 
 	temp = NULL;
 	*line = ft_substr(*statico, 0, get_next_end(*statico));
@@ -78,7 +78,7 @@ static int		get_next_return(int n, char **statico, char **line)
 	return (FT_EOF);
 }
 
-int				get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char		*statico;
 	char			*buffer;
@@ -88,14 +88,14 @@ int				get_next_line(int fd, char **line)
 		return (ERROR);
 	buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (buffer == 0 || fd < 0 || line == 0)
-	{
-		ft_strdel(&buffer);
-		return (ERROR);
-	}
+		return (init_error(buffer));
 	if (statico == 0)
 		statico = ft_strdup("");
-	while ((nbytes = read(fd, buffer, BUFFER_SIZE)) > 0)
+	while (1)
 	{
+		nbytes = read(fd, buffer, BUFFER_SIZE);
+		if (nbytes <= 0)
+			break ;
 		buffer[nbytes] = '\0';
 		statico = ft_strjoin(statico, buffer);
 		if (ft_strchr(statico, '\n') != 0)

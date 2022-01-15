@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 14:57:42 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/14 22:35:09 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/15 12:40:41 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ size_t			ft_strlen(const char *pointer);
 char			*ft_strjoin(char *s1, char const *s2);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 void			ft_strdel(char **str);
+int				init_error(char *buffer);
 #endif

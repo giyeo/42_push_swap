@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 14:58:58 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/09 21:21:25 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/15 12:02:45 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	pa(t_node *stack_a, t_node *stack_b)
 	if (stack_a->next == NULL)
 		px_operation_case_null(stack_a, stack_b, node);
 	else
-		px_operation(stack_a, stack_a, node);
+		px_operation(stack_a, stack_b, node);
 	if (stack_b->next->next == NULL)
 		stack_b->next = NULL;
 	else

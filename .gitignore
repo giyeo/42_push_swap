@@ -3,3 +3,4 @@ pytest.py
 test.sh
 *.o
 push_swap
+checker

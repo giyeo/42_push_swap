@@ -6,19 +6,19 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 14:54:44 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/14 22:35:40 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/15 12:41:05 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void			*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*pointerdest;
 	unsigned char	*pointersource;
 
 	pointerdest = dest;
-	pointersource = (unsigned char*)src;
+	pointersource = (unsigned char *)src;
 	if (pointerdest == 0 && pointersource == 0)
 		return (dest);
 	while (n-- > 0)
@@ -26,7 +26,7 @@ void			*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-char			*ft_strjoin(char *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	char			*pointer;
 	size_t			i;
@@ -53,7 +53,7 @@ char			*ft_strjoin(char *s1, char const *s2)
 	return (pointer);
 }
 
-char			*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
 	char			*sub;
@@ -73,11 +73,17 @@ char			*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-void			ft_strdel(char **str)
+void	ft_strdel(char **str)
 {
 	if (*str && str)
 	{
 		free(*str);
 		*str = NULL;
 	}
+}
+
+int	init_error(char *buffer)
+{
+	ft_strdel(&buffer);
+	return (ERROR);
 }

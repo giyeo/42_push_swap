@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 14:58:58 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/15 00:31:47 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/15 12:21:37 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	px_operation_case_null_checker(t_node *dest_stack, t_node *src_stack,
 	dest_stack->next->next = NULL;
 }
 
-void	px_operation_checker(t_node *dest_stack, t_node *src_stack, t_node *new_node)
+void	px_operation_checker(t_node *dest_stack, t_node *src_stack,
+								t_node *new_node)
 {
 	new_node->value = src_stack->next->value;
 	new_node->index = src_stack->next->index;
@@ -67,7 +68,7 @@ void	pa_checker(t_node *stack_a, t_node *stack_b)
 	if (stack_a->next == NULL)
 		px_operation_case_null_checker(stack_a, stack_b, node);
 	else
-		px_operation_checker(stack_a, stack_a, node);
+		px_operation_checker(stack_a, stack_b, node);
 	if (stack_b->next->next == NULL)
 		stack_b->next = NULL;
 	else
