@@ -6,7 +6,7 @@
 /*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:38:24 by rpaulino          #+#    #+#             */
-/*   Updated: 2022/01/10 00:40:39 by rpaulino         ###   ########.fr       */
+/*   Updated: 2022/01/15 00:11:48 by rpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,18 @@ void			rr(t_node *stack_a, t_node *stack_b);
 void			rra(t_node *stack);
 void			rrb(t_node *stack);
 void			rrr(t_node *stack_a, t_node *stack_b);
+/*  COMMANDS CHECKER  */
+void			sa_checker(t_node *stack);
+void			sb_checker(t_node *stack);
+void			ss_checker(t_node *stack_a, t_node *stack_b);
+void			pa_checker(t_node *stack_a, t_node *stack_b);
+void			pb_checker(t_node *stack_a, t_node *stack_b);
+void			ra_checker(t_node *stack);
+void			rb_checker(t_node *stack);
+void			rr_checker(t_node *stack_a, t_node *stack_b);
+void			rra_checker(t_node *stack);
+void			rrb_checker(t_node *stack);
+void			rrr_checker(t_node *stack_a, t_node *stack_b);
 /*	Sorting		*/
 void			sort(t_node *stack_a, t_node *stack_b);
 int				find_lower(t_node *stack_a);
