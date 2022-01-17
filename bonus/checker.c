@@ -40,7 +40,7 @@ void	exec_command(char *line, t_node *stack_a, t_node *stack_b)
 	else
 		error();
 }
-#include <stdio.h>
+
 void	ordered_checker(t_node *stack_a, t_node *stack_b)
 {
 	stack_a = stack_a->next;
